@@ -23,6 +23,11 @@ public class BooksController {
 		this.repo = repo;
 	}
 	
+	@RequestMapping("/getBooks")
+	public Iterable<Book> GetBooks() {
+		return repo.findAll();
+	}
+	
 	@RequestMapping("/getAuthors")
 	public List<BookAuthor> GetAuthors(){
 		List<Book> books = Lists.newArrayList(repo.findAll());
